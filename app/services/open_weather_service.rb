@@ -1,8 +1,14 @@
 class OpenWeatherService
 
-  def one_call(coordinates, exclude)
+  def one_call(coordinates, exclude, units)
     # exclude is a string with comma separated values. Use 'minutely'
-    response = conn.get("onecall?#{coordinates[:lat]}&lon=#{coordinates[:lng]}&exclude=#{exclude}")
+    # for units, we use 'imperial'
+    response = conn.get("onecall") do |req|
+      req.params[:lat] = coordinates[:lat]
+      req.params[:lon] = coordinates[:lng]
+      req.params[:exclude] = exclude
+      req.params[:units] = units
+    end
     get_json(response)
   end
 
