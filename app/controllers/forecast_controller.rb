@@ -1,8 +1,8 @@
 class ForecastController < ApplicationController
   def show
-    location = Location.new(location_params)
-    coordinates = location.coordinates
-    forecast = ForecastSearch.new(coordinates)
+    city_state = location_params[:location].split(',')
+    location = ResultsFacade.location(city_state)
+    forecast = ForecastSearch.new(location.coordinates)
     render json: ForecastSerializer.new(forecast)
   end
 
