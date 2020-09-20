@@ -4,8 +4,11 @@ class ResultsFacade
     @open_weather ||= OpenWeatherService.new
   end
 
-  def location_details(city, state)
-    @geocoding.location_search(city, state)
+  def location(city_state)
+    @geocoding.location_search(city_state[:city], city_state[:state])
+    # extract city, state, coordinates
+    # make new instance of Location to return to controller
+    Location.new(details)
   end
 
 end
