@@ -5,10 +5,12 @@ class ResultsFacade
   end
 
   def location(city_state)
-    @geocoding.location_search(city_state[:city], city_state[:state])
-    # extract city, state, coordinates
-    # make new instance of Location to return to controller
+    results = @geocoding.location_search(city_state[0], city_state[1])[:results][0]
+    details = {
+      coordinates: results[:locations][0][:latLng],
+      city: results[:locations][0][:adminArea5],
+      state: results[:locations][0][:adminArea3]
+    }
     Location.new(details)
   end
-
 end
