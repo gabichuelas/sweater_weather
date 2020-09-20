@@ -5,7 +5,7 @@ RSpec.describe 'Can get forecast for given city, state in json', type: :request 
     headers = { "ACCEPT" => "application/json",
                 "Content-Type" => "application/json" }
 
-    get "/api/v1/forecast", params: { location: location }, headers: headers
+    get api_v1_forecast_path({location: location}), headers: headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 
