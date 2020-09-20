@@ -13,4 +13,7 @@ class ResultsFacade
     }
     Location.new(details)
   end
+
+  def get_forecast(coordinates)
+  end 
 end
