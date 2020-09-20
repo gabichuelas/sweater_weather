@@ -9,7 +9,7 @@ class Location
 
   def coordinates
     @results.get_coordinates(@city, @state)
-    # returns hash { lat: '', long: ''}
+    # returns hash { lat: '', lng: ''}
   end
 
   def formatted_location

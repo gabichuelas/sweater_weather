@@ -13,7 +13,7 @@ RSpec.describe Location do
 
   xit '#coordinates' do
     expect(@location.coordinates[:lat]).to eq(denver_lat)
-    expect(@location.coordinates[:long]).to eq(denver_long)
+    expect(@location.coordinates[:lng]).to eq(denver_long)
   end
 
   xit '#formatted_location' do
