@@ -7,10 +7,11 @@ RSpec.describe Current do
     @current = Current.new(json[:current])
   end
 
-  it 'has attributes: time, sunrise, sunset, temp, feels_like, humidity, visibility, uvi' do
+  it 'has attributes: time, weather, sunrise, sunset, temp, feels_like, humidity, visibility, uvi' do
 
     expect(@current.id).to eq(nil)
     expect(@current.time).to eq(1600645166)
+    expect(@current.weather).to eq("Clouds")
     expect(@current.sunrise).to eq(1600605971)
     expect(@current.sunset).to eq(1600650010)
     expect(@current.temp).to eq(80.4)

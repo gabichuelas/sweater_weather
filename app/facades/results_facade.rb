@@ -2,6 +2,7 @@ class ResultsFacade
   def initialize
     @geocoding ||= GeocodingService.new
     @open_weather ||= OpenWeatherService.new
+    @pixabay ||= PixabayService.new
   end
 
   def get_location(city_state)
@@ -20,7 +21,16 @@ class ResultsFacade
     Forecast.new(json)
   end
 
-  def get_image(city_state)
-    # use service to get image.
+  def get_image(keywords)
+    json = @pixabay.search_images(keywords)
+    if json[:hits].count > 1
+      index = rand(json[:hits].count - 1)
+    elsif json[:hits].count == 1
+      index = 0
+    else
+      return []
+    end
+    image_data = json[:hits][index]
+    Image.new(image_data)
   end
 end
