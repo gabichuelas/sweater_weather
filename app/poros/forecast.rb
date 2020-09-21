@@ -1,9 +1,24 @@
 class Forecast
+  attr_reader :current_time,
+    :current_sunrise,
+    :current_sunset,
+    :current_temp,
+    :current_feels_like,
+    :current_humidity,
+    :current_visibility,
+    :current_uvi,
+    :hourly_temps,
+    :daily_highs,
+    :daily_lows,
+    :daily_rain,
+    :daily_weather_keywords
+
   def initialize(api_response)
     current ||= api_response[:current]
     hours ||= api_response[:hourly]
     days ||= api_response[:daily]
 
+    @timezone = api_response[:timezone]
     @current_time = current[:dt]
     @current_sunrise = current[:sunrise]
     @current_sunset = current[:sunset]
@@ -30,7 +45,7 @@ class Forecast
       day[:rain]
     end
 
-    @daily_weather_keyword = days.map do |day|
+    @daily_weather_keywords = days.map do |day|
       day[:weather][0][:main]
     end
   end
