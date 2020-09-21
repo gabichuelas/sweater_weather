@@ -28,6 +28,7 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
     json = JSON.parse(response.body, symbolize_names: true)
 
     # expect(response.content_type).to include("application/json")
-    expect(json).to eq('No results')
+    expect(response.status).to eq(200)
+    expect(json).to eq([])
   end
 end

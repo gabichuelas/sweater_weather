@@ -28,7 +28,7 @@ class ResultsFacade
     elsif json[:hits].count == 1
       index = 0
     else
-      return "No results"
+      return []
     end
     image_data = json[:hits][index]
     Image.new(image_data)
