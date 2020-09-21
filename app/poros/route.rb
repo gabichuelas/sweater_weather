@@ -1,14 +1,11 @@
 class Route
-  attr_reader :name, :type, :rating, :location
+  attr_reader :name, :type, :rating, :location, :distance_to_route
 
   def initialize(route_params)
     @name = route_params[:name]
     @type = route_params[:type]
     @rating = route_params[:rating]
     @location = route_params[:location]
-    @coordinates = {
-      lat: route_params[:latitude],
-      lng: route_params[:longitude]
-    }
+    @distance_to_route = ""
   end
 end

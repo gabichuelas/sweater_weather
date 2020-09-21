@@ -5,15 +5,15 @@ class GeocodingService
     get_json(response)
   end
 
-  def route_matrix(start, end)
+  def route_matrix(start, destination)
     body = {
       "locations": [
-        start, end
+        start, destination
       ]
     }
-    response = conn.get("directions/v2/routematrix") do |req|
-      req.body = body
-    end 
+    response = conn.post("directions/v2/routematrix") do |req|
+      req.body = body.to_json
+    end
     get_json(response)
   end
 
