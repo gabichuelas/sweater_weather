@@ -1,6 +1,7 @@
 class ClimbingRoute
   RESULTS ||= ResultsFacade.new
-
+  attr_reader :id, :location, :forecast, :routes
+  
   def initialize(location)
     coordinates = RESULTS.location(location).coordinates
     forecast = RESULTS.get_forecast(coordinates)
