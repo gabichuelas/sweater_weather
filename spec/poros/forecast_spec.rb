@@ -1,5 +1,5 @@
 RSpec.describe Forecast do
-  it 'has current, hourly, and daily attributes' do
+  xit 'has current, hourly, and daily attributes' do
 
     # how to bring in this fixture
     api_response = File.read('denver_forecast.rb')

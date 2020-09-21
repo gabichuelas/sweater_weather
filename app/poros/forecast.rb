@@ -26,12 +26,12 @@ class Forecast
     end
 
     @daily_rain = days.map do |day|
-      day[:rain] unless day[:rain].nil?
-      nil 
+      nil unless day[:rain]
+      day[:rain]
     end
 
     @daily_weather_keyword = days.map do |day|
-      day[:weather][:main]
+      day[:weather][0][:main]
     end
   end
 end

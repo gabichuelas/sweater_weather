@@ -16,7 +16,8 @@ class ResultsFacade
 
   def get_forecast(coordinates)
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
-    require "pry"; binding.pry
+    Forecast.new(json)
+
     # create Forecast object (poro)
     # pull in entire result for one call,
     # only save info that is needed
