@@ -9,10 +9,6 @@ class Forecast
     :current_uvi,
     :next_48_hours,
     :next_8_days
-    # :daily_highs,
-    # :daily_lows,
-    # :daily_rain,
-    # :daily_weather_keywords
 
   def initialize(api_response)
 
@@ -38,22 +34,5 @@ class Forecast
     @current_humidity = current.humidity
     @current_visibility = current.visibility
     @current_uvi = current.uvi
-
-    # @daily_lows = days.map do |day|
-    #   day[:temp][:min]
-    # end
-    #
-    # @daily_highs = days.map do |day|
-    #   day[:temp][:max]
-    # end
-    #
-    # @daily_rain = days.map do |day|
-    #   nil unless day[:rain]
-    #   day[:rain]
-    # end
-    #
-    # @daily_weather_keywords = days.map do |day|
-    #   day[:weather][0][:main]
-    # end
   end
 end
