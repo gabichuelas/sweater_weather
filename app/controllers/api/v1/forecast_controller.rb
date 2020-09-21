@@ -4,12 +4,4 @@ class Api::V1::ForecastController < ApplicationController
     forecast = RESULTS.get_forecast(location.coordinates)
     render json: ForecastSerializer.new(forecast)
   end
-
-  private
-
-  RESULTS ||= ResultsFacade.new
-
-  def location_params
-    params.permit(:location)
-  end
 end
