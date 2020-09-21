@@ -5,9 +5,9 @@ RSpec.describe Forecast do
     json = JSON.parse(api_response, symbolize_names: true)
     forecast = Forecast.new(json)
 
-    expect(forecast.current_temp).to eq(80.4)
-    expect(forecast.current_sunrise).to eq(1600605971)
-    expect(forecast.current_humidity).to eq(17)
+    expect(forecast.current.temp).to eq(80.4)
+    expect(forecast.current.sunrise).to eq(1600605971)
+    expect(forecast.current.humidity).to eq(17)
 
     forecast.next_48_hours.each do |hour|
       expect(hour.class).to eq(Hour)
