@@ -5,15 +5,7 @@ class Api::V1::BackgroundsController < ApplicationController
     weather = forecast.current.weather.downcase
     keywords = "#{weather}+#{city}"
     image = RESULTS.get_image(keywords)
-    render status: 200, body: image.to_json and return unless image.class == Image
+    render json: image, status: 200 and return unless image.class == Image
     render json: ImageSerializer.new(image), status: 200
-  end
-
-  private
-
-  RESULTS ||= ResultsFacade.new
-
-  def location_params
-    params.permit(:location)
   end
 end
