@@ -19,7 +19,7 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
   end
 
   it 'can return 404 if no image results found' do
-    location = 'yellervile,co'
+    location = 'yellervile'
     headers = { "ACCEPT" => "application/json",
                 "Content-Type" => "application/json" }
 
@@ -29,6 +29,5 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
 
     # expect(response.content_type).to include("application/json")
     expect(json).to eq('No results')
-
   end
 end
