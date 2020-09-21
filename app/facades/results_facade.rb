@@ -25,6 +25,7 @@ class ResultsFacade
     # use service to get image.
     json = @pixabay.search_images(keywords)
     require "pry"; binding.pry
-
+    index = rand(json[:hits].count - 1)
+    image_data = json[:hits][index]
   end
 end
