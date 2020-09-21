@@ -20,16 +20,16 @@ RSpec.describe Current do
        :wind_deg=>220,
        :weather=>[{:id=>801, :main=>"Clouds", :description=>"few clouds", :icon=>"02d"}]}}
 
-    @current = Current.new(json)
+    @current = Current.new(json[:current])
   end
 
   it 'has attributes: time, sunrise, sunset, temp, feels_like, humidity, visibility, uvi' do
 
     expect(@current.id).to eq(nil)
-    expect(@current.time).to eq(52.65)
+    expect(@current.time).to eq(1600695758)
     expect(@current.sunrise).to eq(1600692427)
     expect(@current.sunset).to eq(1600736311)
-    expect(@current.temp).to eq(1600736311)
+    expect(@current.temp).to eq(52.65)
     expect(@current.feels_like).to eq(46.2)
     expect(@current.humidity).to eq(66)
     expect(@current.visibility).to eq(10000)
