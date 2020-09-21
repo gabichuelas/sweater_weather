@@ -1,5 +1,5 @@
 class Forecast
-  attr_reader :current_time,
+  attr_reader :id, :timezone, :current_time,
     :current_sunrise,
     :current_sunset,
     :current_temp,
@@ -18,6 +18,7 @@ class Forecast
     hours ||= api_response[:hourly]
     days ||= api_response[:daily]
 
+    @id = nil
     @timezone = api_response[:timezone]
     @current_time = current[:dt]
     @current_sunrise = current[:sunrise]
