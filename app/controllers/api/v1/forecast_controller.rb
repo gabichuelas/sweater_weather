@@ -3,7 +3,7 @@ class Api::V1::ForecastController < ApplicationController
     city_state = location_params[:location].split(',')
     location = RESULTS.location(city_state)
     forecast = RESULTS.get_forecast(location.coordinates)
-    require "pry"; binding.pry
+    # require "pry"; binding.pry
     render json: ForecastSerializer.new(forecast)
   end
 
