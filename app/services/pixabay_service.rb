@@ -3,6 +3,7 @@ class PixabayService
   def search_images(keywords)
     response = conn.get do |req|
       req.params[:q] = keywords
+      req.params[:category] = "backgrounds"
     end
     get_json(response)
   end
