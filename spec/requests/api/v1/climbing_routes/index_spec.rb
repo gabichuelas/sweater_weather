@@ -1,6 +1,6 @@
 RSpec.describe 'Can get climbing routes and forecast for given location as well as distance to each route from given location', type: :request do
 
-  it 'GET /api/v1/climbing_routes?location=erwin,tn' do
+  xit 'GET /api/v1/climbing_routes?location=erwin,tn' do
 
     location = 'erwin,tn'
     headers = { "ACCEPT" => "application/json",
