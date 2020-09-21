@@ -2,6 +2,7 @@ class ResultsFacade
   def initialize
     @geocoding ||= GeocodingService.new
     @open_weather ||= OpenWeatherService.new
+    @mtn_project ||= MtnProjectService.new
   end
 
   def location(city_state)
