@@ -16,7 +16,6 @@ class ResultsFacade
 
   def get_forecast(coordinates)
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
-    require "pry"; binding.pry
     Forecast.new(json)
   end
 end
