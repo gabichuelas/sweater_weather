@@ -8,9 +8,9 @@ RSpec.describe 'Can get forecast for given city, state in json', type: :request 
     get api_v1_forecast_path({location: location}), headers: headers
 
     json = JSON.parse(response.body, symbolize_names: true)
-
-    expect(response.content_type).to include("application/json")
     
+    expect(response.content_type).to include("application/json")
+
     expect(json[:data][:type]).to eq('forecast')
     expect(json[:data][:attributes]).to include(:current_sunset)
     expect(json[:data][:attributes]).to include(:current_humidity)
