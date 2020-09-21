@@ -22,10 +22,15 @@ class ResultsFacade
   end
 
   def get_image(keywords)
-    # use service to get image.
     json = @pixabay.search_images(keywords)
-    require "pry"; binding.pry
-    index = rand(json[:hits].count - 1)
+    if json[:hits].count > 1
+      index = rand(json[:hits].count - 1)
+    elsif json[:hits].count == 1
+      index = 0
+    else
+      return "No results"
+    end
     image_data = json[:hits][index]
+    Image.new(image_data)
   end
 end
