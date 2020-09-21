@@ -6,7 +6,7 @@ class Api::V1::BackgroundsController < ApplicationController
     keywords = "#{weather}+#{city}"
     image = RESULTS.get_image(keywords)
     render status: 200, body: image.to_json and return unless image.class == Image
-    render json: ImageSerializer.new(image)
+    render json: ImageSerializer.new(image), status: 200
   end
 
   private
