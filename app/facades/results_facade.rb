@@ -18,4 +18,11 @@ class ResultsFacade
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
     Forecast.new(json)
   end
+
+  def get_climbing_routes(coordinates)
+    routes = @mtn_project.routes_for_lat_lon(coordinates)[:routes]
+    routes.each do |route|
+      Route.new(route)
+    end
+  end
 end
