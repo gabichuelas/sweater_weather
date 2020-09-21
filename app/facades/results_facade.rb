@@ -19,4 +19,8 @@ class ResultsFacade
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
     Forecast.new(json)
   end
+
+  def get_image(city_state)
+    # use service to get image.
+  end
 end
