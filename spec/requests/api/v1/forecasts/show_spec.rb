@@ -14,5 +14,9 @@ RSpec.describe 'Can get forecast for given city, state in json', type: :request 
     expect(json[:data][:type]).to eq('forecast')
     expect(json[:data][:attributes]).to include(:current_sunset)
     expect(json[:data][:attributes]).to include(:current_humidity)
+
+    expect(json[:data][:attributes]).to_not include(:current_pressure)
+    expect(json[:data][:attributes]).to_not include(:hourly)
+
   end
 end
