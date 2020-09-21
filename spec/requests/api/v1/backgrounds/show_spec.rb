@@ -14,6 +14,7 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
     expect(json[:data][:type]).to eq('image')
     expect(json[:data][:attributes]).to include(:tags)
     expect(json[:data][:attributes]).to include(:image_url)
+    expect(json[:data][:attributes][:image_url]).to include("https://pixabay.com")
     expect(json[:data][:attributes]).to include(:credit)
   end
 end
