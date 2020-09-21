@@ -1,4 +1,5 @@
-RSpec.describe 'Can get climbing routes for given location', type: :request do
+RSpec.describe 'Can get climbing routes and forecast for given location as well as distance to each route from given location', type: :request do
+  
   it 'GET /api/v1/climbing_routes?location=erwin,tn' do
 
     location = 'erwin,tn'
@@ -21,6 +22,6 @@ RSpec.describe 'Can get climbing routes for given location', type: :request do
       expect(route).to include(:name)
       expect(route).to include(:type)
       expect(route).to include(:distance_to_route)
-    end 
+    end
   end
 end
