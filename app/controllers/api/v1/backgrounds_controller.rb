@@ -5,6 +5,7 @@ class Api::V1::BackgroundsController < ApplicationController
     weather = forecast.current.weather.downcase
     keywords = "#{weather}+#{city}"
     image = RESULTS.get_image(keywords)
+    render status: 404 unless image.class == Image
     render json: ImageSerializer.new(image)
   end
 
