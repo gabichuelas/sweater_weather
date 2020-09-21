@@ -17,7 +17,6 @@ RSpec.describe 'Can get forecast for given city, state in json', type: :request 
     expect(json[:data][:attributes]).to include(:next_48_hours)
 
     json[:data][:attributes][:next_8_days].each do |day|
-      # require "pry"; binding.pry
       expect(day).to include(:min)
       expect(day).to include(:max)
       expect(day).to include(:rain)
