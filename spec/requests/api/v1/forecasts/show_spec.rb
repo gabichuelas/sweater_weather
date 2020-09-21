@@ -10,10 +10,18 @@ RSpec.describe 'Can get forecast for given city, state in json', type: :request 
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.content_type).to include("application/json")
-    
+
     expect(json[:data][:type]).to eq('forecast')
-    expect(json[:data][:attributes]).to include(:current_sunset)
-    expect(json[:data][:attributes]).to include(:current_humidity)
+    expect(json[:data][:attributes]).to include(:current)
+    expect(json[:data][:attributes]).to include(:next_8_days)
+    expect(json[:data][:attributes]).to include(:next_48_hours)
+
+    json[:data][:attributes][:next_8_days].each do |day|
+      expect(day).to include(:min)
+      expect(day).to include(:max)
+      expect(day).to include(:rain)
+      expect(day).to include(:weather)
+    end
 
     expect(json[:data][:attributes]).to_not include(:current_pressure)
     expect(json[:data][:attributes]).to_not include(:hourly)
