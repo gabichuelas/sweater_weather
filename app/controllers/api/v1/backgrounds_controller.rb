@@ -2,7 +2,7 @@ class Api::V1::BackgroundsController < ApplicationController
   def show
     city = location_params[:location].split(',')[0]
     forecast = RESULTS.get_forecast(location_params[:location])
-    weather = forecast.current.description.split(' ').join('+')
+    weather = forecast.current.weather.downcase
     keywords = "#{weather}+#{city}"
     image = RESULTS.get_image(keywords)
     render json: ImageSerializer.new(image)

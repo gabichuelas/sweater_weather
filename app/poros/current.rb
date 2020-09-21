@@ -1,6 +1,6 @@
 class Current
   attr_reader :id,
-    :description,
+    :weather,
     :time,
     :sunrise,
     :sunset,
@@ -12,7 +12,7 @@ class Current
 
   def initialize(api_current)
     @id = nil
-    @description = api_current[:weather][0][:description]
+    @weather = api_current[:weather][0][:main]
     @time = api_current[:dt]
     @sunrise = api_current[:sunrise]
     @sunset = api_current[:sunset]
