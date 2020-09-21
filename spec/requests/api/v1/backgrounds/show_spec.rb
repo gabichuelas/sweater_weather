@@ -2,8 +2,10 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
   it 'GET /api/v1/backgrounds?location=<city>,<state>' do
 
     location = 'denver,co'
+    headers = { "ACCEPT" => "application/json",
+                "Content-Type" => "application/json" }
 
-    get api_v1_backgrounds_path({location: location})
+    get api_v1_backgrounds_path({location: location}), headers: headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 
