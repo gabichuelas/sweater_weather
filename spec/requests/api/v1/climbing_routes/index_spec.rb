@@ -11,7 +11,7 @@ RSpec.describe 'Can get climbing routes and forecast for given location as well 
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.content_type).to include("application/json")
-
+    require "pry"; binding.pry
     expect(json[:data][:type]).to eq("climbing_route")
     expect(json[:data][:attributes]).to include(:location)
     expect(json[:data][:attributes]).to include(:forecast)

@@ -22,7 +22,7 @@ class ResultsFacade
 
   def get_climbing_routes(coordinates)
     routes = @mtn_project.routes_for_lat_lon(coordinates)[:routes]
-    routes.each do |route|
+    routes.map do |route|
       Route.new(route)
     end
   end
