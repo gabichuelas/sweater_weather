@@ -28,7 +28,7 @@ RSpec.describe Hour do
 
   it 'has attributes: time, temp' do
 
-    expect(@hour.id).to eq(nil)
+    expect(@hour.id).to eq(1600642800)
     expect(@hour.time).to eq(1600642800)
     expect(@hour.temp).to eq(80.4)
   end
