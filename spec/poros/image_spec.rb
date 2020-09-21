@@ -29,9 +29,10 @@ RSpec.describe Image do
     @image = Image.new(image_details)
   end
 
-  it 'has attributes: image_url, location, credit' do
+  it 'has attributes: image_url, tags, location, credit' do
 
     expect(@image.id).to eq(4046946)
+    expect(@image.tags).to eq("coors field, baseball stadium, colorado rockies")
     expect(@image.image_url).to eq("https://pixabay.com/get/52e0d1454356aa14f6da8c7dda793676113fdfe355536c48732f7bd3954dcc5ebd_1280.jpg")
     expect(@image.credit[:source]).to eq("pixabay.com")
     expect(@image.credit[:user_id]).to eq(1778011)
