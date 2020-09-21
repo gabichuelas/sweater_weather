@@ -1,8 +1,6 @@
 class Api::V1::ForecastController < ApplicationController
   def show
-    city_state = location_params[:location].split(',')
-    location = RESULTS.location(city_state)
-    forecast = RESULTS.get_forecast(location.coordinates)
+    forecast = RESULTS.get_forecast(location_params[:location])
     render json: ForecastSerializer.new(forecast)
   end
 

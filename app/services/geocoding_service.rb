@@ -1,7 +1,7 @@
 class GeocodingService
 
-  def location_search(city, state)
-    response = conn.get("address?city=#{city}&state=#{state}")
+  def location_search(city_state)
+    response = conn.get("address?location=#{city_state}")
     get_json(response)
   end
 
