@@ -2,6 +2,7 @@ class ResultsFacade
   def initialize
     @geocoding ||= GeocodingService.new
     @open_weather ||= OpenWeatherService.new
+    @pixabay ||= PixabayService.new
   end
 
   def get_location(city_state)
@@ -22,5 +23,8 @@ class ResultsFacade
 
   def get_image(keywords)
     # use service to get image.
+    json = @pixabay.search_images(keywords)
+    require "pry"; binding.pry
+
   end
 end
