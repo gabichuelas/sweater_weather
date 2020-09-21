@@ -17,10 +17,5 @@ class ResultsFacade
   def get_forecast(coordinates)
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
     Forecast.new(json)
-
-    # create Forecast object (poro)
-    # pull in entire result for one call,
-    # only save info that is needed
-    # create a serializer for it to use in Cont.
   end
 end
