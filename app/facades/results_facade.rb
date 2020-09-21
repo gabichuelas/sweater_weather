@@ -23,20 +23,14 @@ class ResultsFacade
   def get_climbing_routes(coordinates)
     start = "#{coordinates[:lat]},#{coordinates[:lng]}"
     routes = @mtn_project.routes_for_lat_lon(coordinates)[:routes]
+
     routes.map do |route|
       destination = "#{route[:latitude]},#{route[:longitude]}"
       distance = @geocoding.route_matrix(start, destination)[:distance]
-      route = Route.new(route)
-      route.distance_to_route = distance[1]
-      route
 
-      # {
-      #   name: route[:name],
-      #   type: route[:type],
-      #   rating: route[:rating],
-      #   location: route[:location],
-      #   distance_to_route: distance[1]
-      # }
+      new_route = Route.new(route)
+      new_route.distance_to_route = distance[1]
+      new_route
     end
   end
 end

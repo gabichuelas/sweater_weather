@@ -35,6 +35,6 @@ RSpec.describe Route do
     expect(@route.rating).to eq("5.11b")
     expect(@route.location.class).to eq(Array)
     expect(@route.location).to include("Boulder")
-    # expect(@route.distance_to_route).to eq("")
+    expect(@route.distance_to_route).to eq("")
   end
 end
