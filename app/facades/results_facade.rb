@@ -20,7 +20,7 @@ class ResultsFacade
     Forecast.new(json)
   end
 
-  def get_image(city_state)
+  def get_image(keywords)
     # use service to get image.
   end
 end

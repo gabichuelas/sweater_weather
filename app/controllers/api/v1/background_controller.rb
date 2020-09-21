@@ -1,6 +1,9 @@
 class Api::V1::BackgroundsController < ApplicationController
   def show
-    image = RESULTS.get_image(location_params[:location])
+    forecast = RESULTS.get_forecast(location_params[:location])
+    weather = forecast.current.weather
+    keywords = "#{weather} #{location_params[:location]}"
+    image = RESULTS.get_image(keywords)
     render json: ImageSerializer.new(image)
   end
 
