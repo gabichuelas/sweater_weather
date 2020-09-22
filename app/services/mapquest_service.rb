@@ -1,6 +1,6 @@
-class GeocodingService
+class MapquestService
   include Serviceable
-  
+
   def location_search(city_state)
     response = conn.get("geocoding/v1/address?location=#{city_state}")
     get_json(response)

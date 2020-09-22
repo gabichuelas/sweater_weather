@@ -1,12 +1,12 @@
 class ResultsFacade
   def initialize
-    @geocoding ||= GeocodingService.new
+    @mapquest ||= MapquestService.new
     @open_weather ||= OpenWeatherService.new
     @pixabay ||= PixabayService.new
   end
 
   def get_location(city_state)
-    json = @geocoding.location_search(city_state)[:results][0]
+    json = @mapquest.location_search(city_state)[:results][0]
     json[:locations][0][:latLng]
   end
 
@@ -30,7 +30,7 @@ class ResultsFacade
   end
 
   def get_trip_info(origin, destination)
-    json = @geocoding.directions_search(origin, destination)
+    json = @mapquest.directions_search(origin, destination)
     trip = RoadTrip.new(json)
     hour_index = trip.time_in_seconds.fdiv(3600).round(0) - 1
     forecast = get_forecast(destination)
