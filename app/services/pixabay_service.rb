@@ -10,10 +10,6 @@ class PixabayService
 
   private
 
-  def get_json(response)
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
   def conn
     url = "https://pixabay.com/api/"
     base_conn(url, "key", "PIXABAY_API_KEY")
