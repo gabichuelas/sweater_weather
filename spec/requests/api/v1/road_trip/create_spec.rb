@@ -25,8 +25,8 @@ RSpec.describe 'can return road trip information given start and end destination
     expect(json[:data][:attributes][:origin]).to eq("Denver,CO")
     expect(json[:data][:attributes][:destination]).to eq("Pueblo,CO")
     expect(json[:data][:attributes]).to include(:travel_time)
-    expect(json[:data][:attributes]).to include(:forecast)
-    expect(json[:data][:attributes][:forecast]).to include(:temp)
-    expect(json[:data][:attributes][:forecast]).to include(:weather)
+    expect(json[:data][:attributes]).to include(:arrival_forecast)
+    expect(json[:data][:attributes][:arrival_forecast]).to include(:temp)
+    expect(json[:data][:attributes][:arrival_forecast]).to include(:weather)
   end
 end
