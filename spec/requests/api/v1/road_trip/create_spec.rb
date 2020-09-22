@@ -1,7 +1,10 @@
 RSpec.describe 'can return road trip information given start and end destination: travel time, and arrival forecast (temperature and description)' do
-  
+
   before :each do
     @existing_user = User.create!(email: "whatever@example.com", password: "password", api_key: SecureRandom.uuid)
+
+    @headers = { "ACCEPT" => "application/json",
+                "Content-Type" => "application/json" }
   end
 
   it 'POST /api/v1/road_trip' do
@@ -13,10 +16,7 @@ RSpec.describe 'can return road trip information given start and end destination
                 api_key: @existing_user.api_key
               }.to_json
 
-      headers = { "ACCEPT" => "application/json",
-                  "Content-Type" => "application/json" }
-
-      post api_v1_road_trip_path, params: body, headers: headers
+      post api_v1_road_trip_path, params: body, headers: @headers
 
       json = JSON.parse(response.body, symbolize_names: true)
 
@@ -43,10 +43,7 @@ RSpec.describe 'can return road trip information given start and end destination
                 api_key: "fakeapikey"
               }.to_json
 
-      headers = { "ACCEPT" => "application/json",
-                  "Content-Type" => "application/json" }
-
-      post api_v1_road_trip_path, params: body, headers: headers
+      post api_v1_road_trip_path, params: body, headers: @headers
 
       json = JSON.parse(response.body, symbolize_names: true)
 

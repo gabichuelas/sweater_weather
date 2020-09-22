@@ -1,13 +1,16 @@
 RSpec.describe 'Can fetch a background image for given location', type: :request do
-  
+
+  before :each do
+    @headers = { "ACCEPT" => "application/json",
+                "Content-Type" => "application/json" }
+  end
+
   it 'GET /api/v1/backgrounds?location=<city>,<state>' do
     VCR.use_cassette('backgrounds_denver_co') do
 
       location = 'denver,co'
-      headers = { "ACCEPT" => "application/json",
-                  "Content-Type" => "application/json" }
 
-      get api_v1_backgrounds_path({location: location}), headers: headers
+      get api_v1_backgrounds_path({location: location}), headers: @headers
 
       json = JSON.parse(response.body, symbolize_names: true)
 
@@ -25,10 +28,8 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
     VCR.use_cassette('backgrounds_new_york_ny') do
 
       location = 'new york,ny'
-      headers = { "ACCEPT" => "application/json",
-                  "Content-Type" => "application/json" }
 
-      get api_v1_backgrounds_path({location: location}), headers: headers
+      get api_v1_backgrounds_path({location: location}), headers: @headers
 
       json = JSON.parse(response.body, symbolize_names: true)
 
@@ -47,7 +48,7 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
 
       location = 'yellervile'
 
-      get api_v1_backgrounds_path({location: location})
+      get api_v1_backgrounds_path({location: location}), headers: @headers
 
       json = JSON.parse(response.body, symbolize_names: true)
 
