@@ -28,6 +28,7 @@ RSpec.describe 'can return road trip information given start and end destination
     expect(json[:data][:attributes]).to include(:arrival_forecast)
     expect(json[:data][:attributes][:arrival_forecast]).to include(:temp)
     expect(json[:data][:attributes][:arrival_forecast]).to include(:weather)
+    expect(json[:data][:attributes]).to_not include(:time_in_seconds)
   end
 
   it 'Sad Path: unauthorized api key on POST /api/v1/road_trip' do
