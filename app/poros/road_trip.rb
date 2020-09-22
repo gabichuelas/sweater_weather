@@ -8,6 +8,6 @@ class RoadTrip
     @destination = "#{locations[1][:adminArea5]}, #{locations[1][:adminArea3]}"
     @time_in_seconds = trip_params[:route][:time]
     @travel_time = Time.at(@time_in_seconds).utc.strftime("%H:%M")
-    @arrival_forecast = {}
+    @arrival_forecast = { temp: "", weather: "" }
   end
 end
