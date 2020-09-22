@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pixabay.com/api/?key=18401662-af5c01a13bef9d1be65f3fc81&q=denver%20clouds
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 22 Sep 2020 23:26:55 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d26f8be74d8f3824bd0ee5b63a052fa041600817215; expires=Thu, 22-Oct-20
+        23:26:55 GMT; path=/; domain=.pixabay.com; HttpOnly; SameSite=Lax; Secure
+      - anonymous_user_id=1cdbe443-87b1-4bf8-99b1-29212fd28e59; Path=/
+      Vary:
+      - Accept, Accept-Language, Cookie
+      - Accept-Encoding
+      Cache-Control:
+      - max-age=86400
+      Access-Control-Max-Age:
+      - '86400'
+      X-Ratelimit-Remaining:
+      - '4984'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Reset:
+      - '0.1299642081724605'
+      Allow:
+      - GET, OPTIONS, POST
+      Content-Security-Policy:
+      - frame-ancestors none
+      X-Frame-Options:
+      - DENY
+      Content-Language:
+      - en
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset
+      Cf-Cache-Status:
+      - MISS
+      Cf-Request-Id:
+      - '0559bd500e000007d252930200000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5d6fcb2cec0107d2-ATL
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"total":11,"totalHits":11,"hits":[{"id":92714,"pageURL":"https://pixabay.com/photos/denver-colorado-statue-monument-92714/","type":"photo","tags":"denver,
+        colorado, statue","previewURL":"https://cdn.pixabay.com/photo/2013/03/11/22/15/denver-92714_150.jpg","previewWidth":112,"previewHeight":150,"webformatURL":"https://pixabay.com/get/5fe2d2424e4faa0df7c5d57ccf2c377f1339dcf8525771497d2e7cd69648_640.jpg","webformatWidth":480,"webformatHeight":640,"largeImageURL":"https://pixabay.com/get/5fe2d2424e4fad0bffd8992cc620337e1439d8e74e50774975277ad3954cc0_1280.jpg","imageWidth":3240,"imageHeight":4320,"imageSize":3361201,"views":3292,"downloads":832,"favorites":11,"likes":17,"comments":0,"user_id":12019,"user":"12019","userImageURL":""},{"id":4046946,"pageURL":"https://pixabay.com/photos/coors-field-baseball-stadium-4046946/","type":"photo","tags":"coors
+        field, baseball stadium, colorado rockies","previewURL":"https://cdn.pixabay.com/photo/2019/03/10/18/49/coors-field-4046946_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"https://pixabay.com/get/52e0d1454356aa14f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"https://pixabay.com/get/52e0d1454356aa14f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":4000,"imageHeight":2667,"imageSize":4175073,"views":2179,"downloads":1298,"favorites":7,"likes":7,"comments":2,"user_id":1778011,"user":"1778011","userImageURL":""},{"id":1676475,"pageURL":"https://pixabay.com/photos/denver-colorado-cheesman-park-1676475/","type":"photo","tags":"denver,
+        colorado, cheesman park","previewURL":"https://cdn.pixabay.com/photo/2016/09/17/16/36/denver-1676475_150.jpg","previewWidth":150,"previewHeight":82,"webformatURL":"https://pixabay.com/get/57e6d2454e55a914f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":352,"largeImageURL":"https://pixabay.com/get/57e6d2454e55a914f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":2199,"imageHeight":1210,"imageSize":1302176,"views":2764,"downloads":1347,"favorites":10,"likes":11,"comments":0,"user_id":12019,"user":"12019","userImageURL":""},{"id":4045017,"pageURL":"https://pixabay.com/photos/coors-field-baseball-stadium-denver-4045017/","type":"photo","tags":"coors
+        field, baseball stadium, denver","previewURL":"https://cdn.pixabay.com/photo/2019/03/09/21/11/coors-field-4045017_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"https://pixabay.com/get/52e0d1464a53ab14f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"https://pixabay.com/get/52e0d1464a53ab14f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":4000,"imageHeight":2667,"imageSize":4068242,"views":2073,"downloads":1157,"favorites":11,"likes":3,"comments":0,"user_id":1778011,"user":"1778011","userImageURL":""},{"id":3717957,"pageURL":"https://pixabay.com/photos/denver-colorado-skyline-3717957/","type":"photo","tags":"denver,
+        colorado, skyline","previewURL":"https://cdn.pixabay.com/photo/2018/10/02/05/42/denver-3717957_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"https://pixabay.com/get/55e7d4444357ab14f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":426,"largeImageURL":"https://pixabay.com/get/55e7d4444357ab14f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":3800,"imageHeight":2533,"imageSize":3693859,"views":2429,"downloads":1355,"favorites":9,"likes":7,"comments":1,"user_id":272447,"user":"skeeze","userImageURL":"https://cdn.pixabay.com/user/2020/07/21/01-37-17-778_250x250.jpg"},{"id":93543,"pageURL":"https://pixabay.com/photos/denver-colorado-city-building-93543/","type":"photo","tags":"denver,
+        colorado, city building","previewURL":"https://cdn.pixabay.com/photo/2013/03/14/14/05/denver-93543_150.jpg","previewWidth":150,"previewHeight":112,"webformatURL":"https://pixabay.com/get/5fe3d047494faa0df7c5d57ccf2c377f1339dcf8525771497d2e7cd69648_640.jpg","webformatWidth":640,"webformatHeight":480,"largeImageURL":"https://pixabay.com/get/5fe3d047494fad0bffd8992cc620337e1439d8e74e50774975277ad3954cc0_1280.jpg","imageWidth":4320,"imageHeight":3240,"imageSize":4330126,"views":2244,"downloads":826,"favorites":6,"likes":6,"comments":0,"user_id":12019,"user":"12019","userImageURL":""},{"id":5097749,"pageURL":"https://pixabay.com/photos/urban-denver-colorado-usa-travel-5097749/","type":"photo","tags":"urban,
+        denver, colorado","previewURL":"https://cdn.pixabay.com/photo/2020/04/27/01/17/urban-5097749_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"https://pixabay.com/get/53e0dc444d56a514f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":424,"largeImageURL":"https://pixabay.com/get/53e0dc444d56a514f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":4928,"imageHeight":3264,"imageSize":2889678,"views":223,"downloads":187,"favorites":0,"likes":1,"comments":2,"user_id":14842099,"user":"Abhardphoto","userImageURL":"https://cdn.pixabay.com/user/2020/01/08/01-05-51-552_250x250.jpeg"},{"id":924073,"pageURL":"https://pixabay.com/photos/birds-urban-denver-black-and-white-924073/","type":"photo","tags":"birds,
+        urban, denver","previewURL":"https://cdn.pixabay.com/photo/2015/09/05/08/02/birds-924073_150.jpg","previewWidth":150,"previewHeight":112,"webformatURL":"https://pixabay.com/get/5fe2d1434d51b10ff3d8992cc620337e1439d8e74e50774975277ad3954cc0_640.jpg","webformatWidth":640,"webformatHeight":480,"largeImageURL":"https://pixabay.com/get/5fe2d1434d51b108f5d0846096293f7a153ed8e3514c704f752f73d5904fc45d_1280.jpg","imageWidth":3264,"imageHeight":2448,"imageSize":1071400,"views":1047,"downloads":437,"favorites":2,"likes":4,"comments":0,"user_id":894430,"user":"StockSnap","userImageURL":"https://cdn.pixabay.com/user/2015/03/30/12-22-31-508_250x250.jpg"},{"id":174900,"pageURL":"https://pixabay.com/photos/denver-storm-clouds-skyline-street-174900/","type":"photo","tags":"denver,
+        storm, clouds","previewURL":"https://cdn.pixabay.com/photo/2013/08/23/00/10/denver-174900_150.jpg","previewWidth":111,"previewHeight":150,"webformatURL":"https://pixabay.com/get/57e7d14a4a52b10ff3d8992cc620337e1439d8e74e50774975277ad3954cc0_640.jpg","webformatWidth":477,"webformatHeight":640,"largeImageURL":"https://pixabay.com/get/57e7d14a4a52b108f5d0846096293f7a153ed8e3514c704f752f73d5904fc45d_1280.jpg","imageWidth":1935,"imageHeight":2592,"imageSize":1346202,"views":925,"downloads":325,"favorites":1,"likes":3,"comments":0,"user_id":49690,"user":"CherylZ1961","userImageURL":"https://cdn.pixabay.com/user/2013/08/22/23-56-26-947_250x250.jpg"},{"id":5097747,"pageURL":"https://pixabay.com/photos/urban-denver-colorado-usa-travel-5097747/","type":"photo","tags":"urban,
+        denver, colorado","previewURL":"https://cdn.pixabay.com/photo/2020/04/27/01/16/urban-5097747_150.jpg","previewWidth":150,"previewHeight":102,"webformatURL":"https://pixabay.com/get/53e0dc444d56ab14f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":437,"largeImageURL":"https://pixabay.com/get/53e0dc444d56ab14f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":4604,"imageHeight":3146,"imageSize":1941814,"views":102,"downloads":80,"favorites":1,"likes":2,"comments":2,"user_id":14842099,"user":"Abhardphoto","userImageURL":"https://cdn.pixabay.com/user/2020/01/08/01-05-51-552_250x250.jpeg"},{"id":5097751,"pageURL":"https://pixabay.com/photos/urban-denver-colorado-usa-capitol-5097751/","type":"photo","tags":"urban,
+        denver, colorado","previewURL":"https://cdn.pixabay.com/photo/2020/04/27/01/18/urban-5097751_150.jpg","previewWidth":150,"previewHeight":99,"webformatURL":"https://pixabay.com/get/53e0dc444d57ad14f1dc846096293f7a153ed8e3514c704f752f73d5904fc45d_640.jpg","webformatWidth":640,"webformatHeight":424,"largeImageURL":"https://pixabay.com/get/53e0dc444d57ad14f6da8c7dda793676113fdfe355536c48732f7bdc964ac759bd_1280.jpg","imageWidth":4928,"imageHeight":3264,"imageSize":4197149,"views":66,"downloads":51,"favorites":0,"likes":1,"comments":2,"user_id":14842099,"user":"Abhardphoto","userImageURL":"https://cdn.pixabay.com/user/2020/01/08/01-05-51-552_250x250.jpeg"}]}'
+  recorded_at: Tue, 22 Sep 2020 23:26:55 GMT
+recorded_with: VCR 6.0.0

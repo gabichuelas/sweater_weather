@@ -1,17 +1,19 @@
 class ResultsFacade
+  attr_reader :mapquest, :open_weather, :pixabay
+
   def initialize
     @mapquest ||= MapquestService.new
     @open_weather ||= OpenWeatherService.new
     @pixabay ||= PixabayService.new
   end
 
-  def get_location(city_state)
+  def get_coordinates(city_state)
     json = @mapquest.location_search(city_state)[:results][0]
     json[:locations][0][:latLng]
   end
 
   def get_forecast(city_state)
-    coordinates = get_location(city_state)
+    coordinates = get_coordinates(city_state)
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
     Forecast.new(json)
   end

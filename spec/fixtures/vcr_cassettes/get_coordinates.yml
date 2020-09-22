@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=Pu8Q72GeVI6Lm31PvlMG2t0d1XG4qF4c&location=gainesville,fl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 22 Sep 2020 23:22:01 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1040'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Tue, 22 Sep 2020 23:22:01 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=86E8C512C5923FE512B04245A9AE9407; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2020 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2020 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"gainesville,fl"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Gainesville","adminArea5Type":"City","adminArea4":"Alachua
+        County","adminArea4Type":"County","adminArea3":"FL","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282039396","unknownInput":"","type":"s","latLng":{"lat":29.651958,"lng":-82.325024},"displayLatLng":{"lat":29.651958,"lng":-82.325024},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=Pu8Q72GeVI6Lm31PvlMG2t0d1XG4qF4c&type=map&size=225,160&locations=29.651958,-82.325024|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1197506468"}]}]}'
+  recorded_at: Tue, 22 Sep 2020 23:22:01 GMT
+recorded_with: VCR 6.0.0
