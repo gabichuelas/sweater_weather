@@ -36,6 +36,6 @@ class ResultsFacade
 
   def get_route_info(origin, destination)
     json = @geocoding.directions_search(origin, destination)
-    RoadTrip.new(json[:route])
+    RoadTrip.new(json)
   end
 end
