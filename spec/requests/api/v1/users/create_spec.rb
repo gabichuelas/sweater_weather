@@ -9,8 +9,9 @@ RSpec.describe 'can create user from POST body and return unique api_key' do
     headers = { "ACCEPT" => "application/json",
                 "Content-Type" => "application/json" }
 
-    post api_v1_users_path, body: body, format: :json
+    post api_v1_users_path, params: body, headers: headers
 
+    # check request.POST to ensure data arrived as body.
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.content_type).to include("application/json")
