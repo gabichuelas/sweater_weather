@@ -5,7 +5,7 @@ class Api::V1::SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       render json: UserSerializer.new(user), status: 200
     else
-      render json: "403: Bad credentials or user not found".to_json, status: 403
+      render json: "401: Bad credentials or user not found".to_json, status: 401
     end
   end
 
