@@ -9,10 +9,4 @@ class Api::V1::UsersController < ApplicationController
       render json: new_user.errors.full_messages, status: 401
     end
   end
-
-  private
-
-  def user_params
-    params.permit(:email, :password, :password_confirmation)
-  end
 end

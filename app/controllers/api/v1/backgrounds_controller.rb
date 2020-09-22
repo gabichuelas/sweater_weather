@@ -5,7 +5,8 @@ class Api::V1::BackgroundsController < ApplicationController
     weather = forecast.current.weather.downcase
     keywords = "#{weather}+#{city}"
     image = RESULTS.get_image(keywords)
-    render json: image, status: 200 and return unless image.class == Image
+    msg = "No results found".to_json
+    render json: msg, status: 200 and return unless image.class == Image
     render json: ImageSerializer.new(image), status: 200
   end
 end

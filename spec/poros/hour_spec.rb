@@ -31,5 +31,6 @@ RSpec.describe Hour do
     expect(@hour.id).to eq(1600642800)
     expect(@hour.time).to eq(1600642800)
     expect(@hour.temp).to eq(80.4)
+    expect(@hour.description).to eq("broken clouds")
   end
 end
