@@ -7,8 +7,6 @@ RSpec.describe RoadTrip do
 
     expect(trip.origin).to eq("Denver, CO")
     expect(trip.destination).to eq("Pueblo, CO")
-    expect(trip.travel_time.class).to eq(String)
-    expect(trip.travel_time).to eq("01:43")
     expect(trip.time_in_seconds.class).to eq(Integer)
     expect(trip.time_in_seconds).to eq(6237)
     expect(trip.arrival_forecast.class).to eq(Hash)
