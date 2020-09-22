@@ -1,10 +1,12 @@
 RSpec.describe Forecast do
-  it 'has current, hourly, and daily attributes' do
+  it 'has current, hourly, and daily attributes as well as coordinates and timezone for id purposes' do
 
     api_response = File.read('spec/fixtures/denver_forecast2.json')
     json = JSON.parse(api_response, symbolize_names: true)
     forecast = Forecast.new(json)
 
+    expect(forecast.timezone).to eq("America/Denver")
+    expect(forecast.coordinates).to eq({ lat: 39.74, lon: -104.98 })
     expect(forecast.current.temp).to eq(80.4)
     expect(forecast.current.sunrise).to eq(1600605971)
     expect(forecast.current.humidity).to eq(17)
