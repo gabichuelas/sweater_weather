@@ -34,8 +34,15 @@ class ResultsFacade
     Image.new(image_data)
   end
 
-  def get_route_info(origin, destination)
+  def get_trip_info(origin, destination)
     json = @geocoding.directions_search(origin, destination)
-    RoadTrip.new(json)
+    trip = RoadTrip.new(json)
+    hour_index = trip.time_in_seconds.fdiv(3600).round(0) - 1
+    forecast = get_forecast(destination)
+    temp = forecast.next_48_hours[hour_index].temp
+    weather = forecast.next_48_hours[hour_index].description
+    trip.arrival_forecast[:temp] ||= temp
+    trip.arrival_forecast[:weather] ||= description
+    trip
   end
 end
