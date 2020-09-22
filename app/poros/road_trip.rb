@@ -1,5 +1,6 @@
 class RoadTrip
-  attr_reader :origin, :destination, :travel_time, :time_in_seconds, :arrival_forecast
+  attr_reader :origin, :destination, :travel_time, :time_in_seconds
+  attr_accessor :arrival_forecast
   def initialize(trip_params)
     locations = trip_params[:route][:locations]
     @origin = "#{locations[0][:adminArea5]}, #{locations[0][:adminArea3]}"
