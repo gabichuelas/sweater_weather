@@ -29,4 +29,23 @@ RSpec.describe 'can return road trip information given start and end destination
     expect(json[:data][:attributes][:arrival_forecast]).to include(:temp)
     expect(json[:data][:attributes][:arrival_forecast]).to include(:weather)
   end
+
+  it 'Sad Path: unauthorized api key on POST /api/v1/road_trip' do
+    body = {
+              origin: "Denver,CO",
+              destination: "Pueblo,CO",
+              api_key: "fakeapikey"
+            }.to_json
+
+    headers = { "ACCEPT" => "application/json",
+                "Content-Type" => "application/json" }
+
+    post api_v1_road_trip_path, params: body, headers: headers
+
+    json = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response.content_type).to include("application/json")
+    expect(response.status).to eq(401)
+    expect(json).to include("401: Unauthorized or missing API key")
+  end
 end
