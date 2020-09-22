@@ -1,6 +1,5 @@
 RSpec.describe User do
-  validates :email, uniqueness: true, presence: true
-  validates :password, require: true
-
-  has_secure_password
+  it { should validate_presence_of :email }
+  it { should validate_uniqueness_of :email }
+  it { should validate_presence_of :password }
 end
