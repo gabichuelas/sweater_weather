@@ -40,7 +40,7 @@ RSpec.describe 'can \'login\' user from POST body and return user with api_key' 
     json = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.content_type).to include("application/json")
-    expect(response.status).to eq(403)
-    expect(json).to include("403: Bad credentials or user not found")
+    expect(response.status).to eq(401)
+    expect(json).to include("401: Bad credentials or user not found")
   end
 end
