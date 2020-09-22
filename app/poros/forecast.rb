@@ -4,6 +4,7 @@ class Forecast
   def initialize(api_response)
 
     @id = nil
+    @location = 
     @timezone = api_response[:timezone]
     @current = Current.new(api_response[:current])
 
