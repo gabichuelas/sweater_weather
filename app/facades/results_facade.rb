@@ -33,4 +33,9 @@ class ResultsFacade
     image_data = json[:hits][index]
     Image.new(image_data)
   end
+
+  def get_route_info(origin, destination)
+    json = @geocoding.directions_search(origin, destination)
+    RoadTrip.new(json[:route])
+  end
 end
