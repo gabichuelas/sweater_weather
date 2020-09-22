@@ -1,12 +1,11 @@
 class Api::V1::SessionsController < ApplicationController
 
   def create
-    require "pry"; binding.pry
-    user = User.find_by(user_params)
-    if user
-      render json: UserSerializer.new(new_user), status: 200
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      render json: UserSerializer.new(user), status: 200
     else
-      render json: "Bad credentials".to_json, status: 403
+      render json: "403: Bad credentials or user not found".to_json, status: 403
     end
   end
 
