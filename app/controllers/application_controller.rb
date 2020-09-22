@@ -11,6 +11,6 @@ class ApplicationController < ActionController::API
   end
 
   def trip_params
-    params.permit(:origin, :destination)
+    params.permit(:origin, :destination, :api_key)
   end
 end
