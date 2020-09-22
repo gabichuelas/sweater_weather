@@ -1,6 +1,7 @@
 class Api::V1::SessionsController < ApplicationController
 
   def create
+    require "pry"; binding.pry
     user = User.find_by(user_params)
     if user
       render json: UserSerializer.new(new_user), status: 200

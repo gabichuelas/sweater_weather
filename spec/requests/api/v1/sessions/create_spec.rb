@@ -13,7 +13,7 @@ RSpec.describe 'can \'login\' user from POST body and return user with api_key' 
     headers = { "ACCEPT" => "application/json",
                 "Content-Type" => "application/json" }
 
-    post api_v1_users_path, params: body, headers: headers
+    post api_v1_sessions_path, params: body, headers: headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 
@@ -35,7 +35,7 @@ RSpec.describe 'can \'login\' user from POST body and return user with api_key' 
     headers = { "ACCEPT" => "application/json",
                 "Content-Type" => "application/json" }
 
-    post api_v1_users_path, params: body, headers: headers
+    post api_v1_sessions_path, params: body, headers: headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 
