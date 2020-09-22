@@ -26,7 +26,7 @@ RSpec.describe 'can \'login\' user from POST body and return user with api_key' 
     expect(json[:data][:attributes][:api_key]).to eq(@existing_user.api_key)
   end
 
-  xit 'Sad Path: bad credentials on POST /api/v1/sessions' do
+  it 'Sad Path: bad credentials on POST /api/v1/sessions' do
     body = {
               email: "whatever@example.com",
               password: "wrongpass"
@@ -41,6 +41,6 @@ RSpec.describe 'can \'login\' user from POST body and return user with api_key' 
 
     expect(response.content_type).to include("application/json")
     expect(response.status).to eq(403)
-    expect(json).to include("Bad credentials")
+    expect(json).to include("403: Bad credentials or user not found")
   end
 end
