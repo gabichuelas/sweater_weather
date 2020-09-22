@@ -5,6 +5,6 @@ class Hour
     @id = hour_params[:dt]
     @time = hour_params[:dt]
     @temp = hour_params[:temp]
-    @description = hour_params[:weather][:description]
+    @description = hour_params[:weather][0][:description]
   end
 end
