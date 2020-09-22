@@ -1,4 +1,5 @@
 RSpec.describe 'can \'login\' user from POST body and return user with api_key' do
+
   before :each do
     @existing_user = User.create!(email: "whatever@example.com", password: "password", api_key: SecureRandom.uuid)
   end
@@ -27,6 +28,7 @@ RSpec.describe 'can \'login\' user from POST body and return user with api_key' 
   end
 
   it 'Sad Path: bad credentials on POST /api/v1/sessions' do
+    
     body = {
               email: "whatever@example.com",
               password: "wrongpass"

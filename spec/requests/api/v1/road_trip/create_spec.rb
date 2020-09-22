@@ -1,4 +1,5 @@
 RSpec.describe 'can return road trip information given start and end destination: travel time, and arrival forecast (temperature and description)' do
+  
   before :each do
     @existing_user = User.create!(email: "whatever@example.com", password: "password", api_key: SecureRandom.uuid)
   end
@@ -52,6 +53,6 @@ RSpec.describe 'can return road trip information given start and end destination
       expect(response.content_type).to include("application/json")
       expect(response.status).to eq(401)
       expect(json).to include("401: Unauthorized or missing API key")
-    end 
+    end
   end
 end

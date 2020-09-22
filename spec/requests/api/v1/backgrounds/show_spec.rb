@@ -1,4 +1,5 @@
 RSpec.describe 'Can fetch a background image for given location', type: :request do
+  
   it 'GET /api/v1/backgrounds?location=<city>,<state>' do
     VCR.use_cassette('backgrounds_denver_co') do
 
