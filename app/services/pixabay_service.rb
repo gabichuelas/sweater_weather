@@ -1,4 +1,5 @@
 class PixabayService
+  include Serviceable
 
   def search_images(keywords)
     response = conn.get do |req|
@@ -14,10 +15,7 @@ class PixabayService
   end
 
   def conn
-    Faraday.new(url: "https://pixabay.com/api/") do |req|
-      req.params["key"] = ENV["PIXABAY_API_KEY"]
-      req.headers["Accept"] = "application/json"
-      req.headers["Content-Type"] = "application/json"
-    end
+    url = "https://pixabay.com/api/"
+    base_conn(url, "key", "PIXABAY_API_KEY")
   end
 end
