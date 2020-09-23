@@ -10,6 +10,8 @@ RSpec.describe MapquestService do
     expect(json[:results].count).to eq(1)
     expect(json[:results][0]).to include(:locations)
     expect(json[:results][0][:locations][0]).to include(:latLng)
+    expect(json[:results][0][:locations][0][:latLng].class).to eq(Hash)
+
   end
 
   it '#directions_search' do

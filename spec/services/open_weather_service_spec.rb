@@ -23,6 +23,7 @@ RSpec.describe OpenWeatherService do
     expect(json[:current]).to include(:sunrise)
     expect(json[:current]).to include(:sunset)
     expect(json[:current]).to include(:temp)
+    expect(json[:current][:temp].class).to eq(Float)
     expect(json[:current]).to include(:feels_like)
     expect(json[:current]).to include(:humidity)
     expect(json[:current]).to include(:visibility)
@@ -34,6 +35,7 @@ RSpec.describe OpenWeatherService do
       expect(hour).to include(:weather)
       expect(hour[:weather].count).to eq(1)
       expect(hour[:weather][0]).to include(:description)
+      expect(hour[:weather][0][:description].class).to eq(String)
     end
 
     json[:daily].each do |day|
