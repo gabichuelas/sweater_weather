@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://pixabay.com/api/?key=18401662-af5c01a13bef9d1be65f3fc81&q=gainesville
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 22 Sep 2020 23:55:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '35'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc15f27bce23a38ea376d9a27de8e6b091600818906; expires=Thu, 22-Oct-20
+        23:55:06 GMT; path=/; domain=.pixabay.com; HttpOnly; SameSite=Lax; Secure
+      - anonymous_user_id=b1a2e956-a966-4ea6-ac4e-14e200ec96ec; Path=/
+      Cache-Control:
+      - max-age=86400
+      Access-Control-Max-Age:
+      - '86400'
+      X-Ratelimit-Remaining:
+      - '4993'
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Reset:
+      - '0.37125895001385084'
+      Vary:
+      - Accept, Accept-Language, Cookie, Accept-Encoding
+      Allow:
+      - POST, GET, OPTIONS
+      Content-Security-Policy:
+      - frame-ancestors none
+      X-Frame-Options:
+      - DENY
+      Content-Language:
+      - en
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD
+      Access-Control-Expose-Headers:
+      - X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset
+      Cf-Cache-Status:
+      - MISS
+      Accept-Ranges:
+      - bytes
+      Cf-Request-Id:
+      - '0559d71d670000b9d42a0bb200000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5d6ff4757e6eb9d4-ATL
+      Alt-Svc:
+      - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"total":0,"totalHits":0,"hits":[]}'
+  recorded_at: Tue, 22 Sep 2020 23:55:06 GMT
+recorded_with: VCR 6.0.0

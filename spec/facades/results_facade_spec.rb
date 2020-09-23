@@ -40,6 +40,14 @@ RSpec.describe ResultsFacade do
     end
   end
 
+  it 'sad path, no results: #get_image' do
+    VCR.use_cassette('get_image2') do
+
+      image = @facade.get_image("gainesville")
+      expect(image).to eq([])
+    end
+  end
+
   it '#get_trip_info' do
     VCR.use_cassette('get_trip_info') do
 
