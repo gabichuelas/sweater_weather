@@ -36,6 +36,9 @@ class ResultsFacade
     trip = RoadTrip.new(json)
     hour_index = trip.time_in_seconds.fdiv(3600).round(0) - 1
     forecast = get_forecast(destination)
+    # check if hour_index is <= 47, if not:
+    # hour_index / 12 - 1 == day_index, must be <= 7
+    # use next_8_days[day_index]
     temp = forecast.next_48_hours[hour_index].temp
     weather = forecast.next_48_hours[hour_index].description
     trip.arrival_forecast[:temp] = temp
