@@ -43,7 +43,7 @@ RSpec.describe 'Can fetch a background image for given location', type: :request
     end
   end
 
-  it 'can return 404 if no image results found' do
+  it 'can return 200 even if no image results found, but with informative message' do
     VCR.use_cassette('backgrounds_yellervile') do
 
       location = 'yellervile'
