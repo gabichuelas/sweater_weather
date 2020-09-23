@@ -38,4 +38,5 @@ Add these to your `application.yml` file:
 * Make sure to spin up a local server for _Sweater Weather_ before trying to run the requests in Postman.
 * From the project directory, run `rails s`.
 * The Postman collection below uses `http://localhost:3000` as the base domain.
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1743be49414cecbda190)
