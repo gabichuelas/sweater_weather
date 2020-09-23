@@ -1,22 +1,19 @@
 class ResultsFacade
+  attr_reader :mapquest, :open_weather, :pixabay
+
   def initialize
-    @geocoding ||= GeocodingService.new
+    @mapquest ||= MapquestService.new
     @open_weather ||= OpenWeatherService.new
     @pixabay ||= PixabayService.new
   end
 
-  def get_location(city_state)
-    json = @geocoding.location_search(city_state)[:results][0]
-    details = {
-      coordinates: json[:locations][0][:latLng],
-      city: json[:locations][0][:adminArea5],
-      state: json[:locations][0][:adminArea3]
-    }
-    Location.new(details)
+  def get_coordinates(city_state)
+    json = @mapquest.location_search(city_state)[:results][0]
+    json[:locations][0][:latLng]
   end
 
   def get_forecast(city_state)
-    coordinates = get_location(city_state).coordinates
+    coordinates = get_coordinates(city_state)
     json = @open_weather.one_call(coordinates, 'minutely', 'imperial')
     Forecast.new(json)
   end
@@ -35,7 +32,7 @@ class ResultsFacade
   end
 
   def get_trip_info(origin, destination)
-    json = @geocoding.directions_search(origin, destination)
+    json = @mapquest.directions_search(origin, destination)
     trip = RoadTrip.new(json)
     hour_index = trip.time_in_seconds.fdiv(3600).round(0) - 1
     forecast = get_forecast(destination)

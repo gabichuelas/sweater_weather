@@ -1,4 +1,10 @@
 RSpec.describe 'can create user from POST body and return unique api_key' do
+
+  before :each do
+    @headers = { "ACCEPT" => "application/json",
+                "Content-Type" => "application/json" }
+  end
+
   it 'POST /api/v1/users' do
     body = {
               email: "whatever@example.com",
@@ -6,10 +12,7 @@ RSpec.describe 'can create user from POST body and return unique api_key' do
               password_confirmation: "password"
             }.to_json
 
-    headers = { "ACCEPT" => "application/json",
-                "Content-Type" => "application/json" }
-
-    post api_v1_users_path, params: body, headers: headers
+    post api_v1_users_path, params: body, headers: @headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 
@@ -29,10 +32,7 @@ RSpec.describe 'can create user from POST body and return unique api_key' do
               email: "whatever@example.com"
             }.to_json
 
-    headers = { "ACCEPT" => "application/json",
-                "Content-Type" => "application/json" }
-
-    post api_v1_users_path, params: body, headers: headers
+    post api_v1_users_path, params: body, headers: @headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 
@@ -50,10 +50,7 @@ RSpec.describe 'can create user from POST body and return unique api_key' do
               password_confirmation: "password"
             }.to_json
 
-    headers = { "ACCEPT" => "application/json",
-                "Content-Type" => "application/json" }
-
-    post api_v1_users_path, params: body, headers: headers
+    post api_v1_users_path, params: body, headers: @headers
 
     json = JSON.parse(response.body, symbolize_names: true)
 

@@ -1,4 +1,5 @@
-class GeocodingService
+class MapquestService
+  include Serviceable
 
   def location_search(city_state)
     response = conn.get("geocoding/v1/address?location=#{city_state}")
@@ -17,15 +18,8 @@ class GeocodingService
 
   private
 
-  def get_json(response)
-    JSON.parse(response.body, symbolize_names: true)
-  end
-
   def conn
-    Faraday.new(url: "http://www.mapquestapi.com/") do |req|
-      req.params["key"] = ENV["GEOCODING_API_KEY"]
-      req.headers["Accept"] = "application/json"
-      req.headers["Content-Type"] = "application/json"
-    end
+    url = "http://www.mapquestapi.com/"
+    base_conn(url, "key", "GEOCODING_API_KEY")
   end
 end
