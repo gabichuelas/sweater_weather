@@ -73,5 +73,10 @@ RSpec.configure do |config|
     config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
     config.hook_into :webmock
     config.allow_http_connections_when_no_cassette = true
+    config.filter_sensitive_data('<GEOCODING_API_KEY>') { ENV['GEOCODING_API_KEY'] }
+    config.filter_sensitive_data('<OPEN_WEATHER_API_KEY>') { ENV['OPEN_WEATHER_API_KEY'] }
+    config.filter_sensitive_data('<PIXABAY_API_KEY>') { ENV['PIXABAY_API_KEY'] }
+    config.default_cassette_options = { re_record_interval: 3.days }
+    config.configure_rspec_metadata!
   end
 end
