@@ -38,8 +38,8 @@ class ResultsFacade
     forecast = get_forecast(destination)
     temp = forecast.next_48_hours[hour_index].temp
     weather = forecast.next_48_hours[hour_index].description
-    trip.arrival_forecast[:temp] ||= temp
-    trip.arrival_forecast[:weather] ||= weather
+    trip.arrival_forecast[:temp] = temp
+    trip.arrival_forecast[:weather] = weather
     trip
   end
 end

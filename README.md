@@ -33,3 +33,6 @@ Add these to your `application.yml` file:
 
 [Pixabay API](https://pixabay.com/service/about/api/)<br>
 `PIXABAY_API_KEY: <api_key>`
+
+### Sweater Weather in Action!
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1743be49414cecbda190)
