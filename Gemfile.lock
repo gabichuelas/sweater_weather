@@ -222,6 +222,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootsnap (>= 1.4.2)
+  bundler
   byebug
   capybara
   factory_bot_rails
