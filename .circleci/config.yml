@@ -9,4 +9,6 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-      - rspec
+      - run:
+          name: Test Suite
+          command: rspec
