@@ -11,4 +11,4 @@ jobs:
       - checkout
       - run:
           name: Test Suite
-          command: rspec
+          command: bundle exec rspec
