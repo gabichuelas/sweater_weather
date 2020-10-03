@@ -1,5 +1,7 @@
 ## Sweater Weather
 
+[![CircleCI](https://circleci.com/gh/gabichuelas/sweater_weather.svg?style=shield)](https://app.circleci.com/pipelines/github/gabichuelas/sweater_weather)
+
 _Sweater Weather_ is a backend Rails API for a hypothetical weather & trip planning app that connects to the **Mapquest**, **Open Weather**, and **Pixabay** exernal APIs.
 
 This project was completed during the end of Module 3 of the Backend Engineering Program at [Turing](www.turing.io), which focuses on building and consuming API's.
